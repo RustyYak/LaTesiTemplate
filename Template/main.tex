@@ -1,0 +1,169 @@
+%
+%                         LaTesiTemplate             
+%                               
+%  Autore del codice sorgente: Daniele Rosati.
+%
+%  Il codice sorgente è rilasciato secondo la licenza open source MIT. 
+%
+%  Si rimanda al LICENSE per il testo completo della licenza, ma in parole povere siete liberi di modificare o copiare o modificare il codice in qualunque sua parte o forma.
+%
+%  In caso riscontriate bug, avete consigli o modifiche sul file chiedo eventualmente di farmelo sapere tramite il git della repository del progetto:
+%
+%  Per approfondimenti circa le opzioni ed il funzionamento del template, si rimanda al  
+%  alla wiki  del progetto.
+%
+%   PREAMBOLO E OPZIONI GENERALI
+
+\documentclass[11pt,a4paper,oneside,openright,regno]{book}
+
+\usepackage{geometry}
+\geometry{a4paper,top=3.5cm,bottom=3cm,left=3.5cm,right=3.5cm,heightrounded,bindingoffset=5mm}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{frontespizio}
+
+\usepackage[bottom]{footmisc}
+\usepackage{bbm}
+\usepackage{booktabs}
+
+%  Pacchetti Header e Footer delle pagine
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\leftmark} 
+\fancyfoot[C]{\thepage}
+
+%  Pachetto Appendici
+
+\usepackage[toc,page]{appendix}
+
+%  Pacchetti Grafici
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+%  Pacchetti Tabelle
+
+\usepackage{rotating} 
+\usepackage{caption} 
+\usepackage{adjustbox}
+\usepackage[section]{placeins}
+\usepackage{subcaption}
+
+%  Pacchetto Codice Tesi
+
+\usepackage{minted}
+
+%  Pacchetti Bibliografia
+
+\usepackage[backend=biber, style=bwl-FU]{biblatex}
+\addbibresource{Bibliography.bib}
+\usepackage{csquotes}
+
+%  Codice Frontespizio
+%
+%  Il frontespizio è differente da università ad università perciò qui ne è stato inserito uno generico.
+%  Per modificarlo avete 3 strade:
+%  a) la vostra università mette a disposizione il codice latex con i file necessari
+%  b) utilizzare il doc con il titolo e integrarlo con il codice 
+%  c) provarlo a generare voi il codice
+
+\doublespace
+
+\title{Titolo Tesi - Draft}
+\author{Autore Titolo}
+\date{Inserire Data}
+
+%  DOCUMENTO PRINCIPALE
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+%  Codice per lasciare pagina in bianco; se non si vuole cancellare righe 94-99 tipo presenti nel codice.
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+\vfill
+
+%  Dedica Tesi
+
+\clearpage
+\thispagestyle{empty}
+\null\vspace{\stretch{1}}
+\begin{flushright}
+\textit{Inserire la dedica qui,\\
+ricordando che con,\\
+si va a capo.}
+\end{flushright}
+\vspace{\stretch{2}}\null
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+\vfill
+\addtocounter{page}{-1}
+
+%  Indice Analitico
+
+\tableofcontents
+\mainmatter
+\chapter*{Introduzione}
+\markboth{INTRODUZIONE}{INTRODUZIONE}
+\addcontentsline{toc}{chapter}{Introduzione}
+\input{chapters/Introduction}
+\chapter{Capitolo1}
+\input{chapters/chapter1}
+\chapter{Capitolo2}
+\input{chapters/chapter2}
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+\vfill
+\addtocounter{page}{-1}
+
+% Per aggiungere l'appendice è sufficiente eliminare %% nelle righe 142-148.
+%% \appendix
+%% \chapter{Approfondimenti ed Appendici}
+%% \input{chapters/Appendix}
+%% \renewcommand{\thesubsection}{\Alph{subsection}}
+%% \chapter{Codice Tesi}
+%% \input{chapters/code}
+
+\backmatter
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+\vfill
+
+\addcontentsline{toc}{chapter}{Elenco delle figure}
+\listoffigures\newpage
+
+\addcontentsline{toc}{chapter}{Elenco delle tabelle}
+\listoftables\newpage
+
+% Per aggiungere biblioografia è sufficiente eliminare %% dalle righe 166-168 
+%% \addcontentsline{toc}{chapter}{Bibliografia}
+%% \nocite{*}
+%% \printbibliography
+
+\end{document}
