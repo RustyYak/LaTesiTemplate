@@ -1,16 +1,16 @@
 # LaTesiTemplate
 Semplice **Template in Latex**, senza fronzoli, per scrivere la tesi on-the-go!
 # Come è Stutturata la Repository?
-La repository è suddivisa in:
-- [Template](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template): contiene il sorgente Tex vero e proprio del template; 
-- Example: contiene un esempio di codice ed il compilato
+La repository è composta di:
+- [Template](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template): directory contenente il sorgente Tex vero e proprio del template; 
+- [Example](https://github.com/RustyYak/LaTesiTemplate/tree/master/Example): directory contenente un esempio di codice del template ed il compilato pdf associato.
 # Istruzioni sull'Utilizzo del Template
-Il codice sorgente del template, situato nella directory [Template](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template), è composta logicamente nel modo seguente:
+Il codice sorgente del template, situato nella directory [Template](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template), è si compone al modo seguente, cioè in:
 - [main.tex](https://github.com/RustyYak/LaTesiTemplate/blob/master/Template/main.tex) che controlla le opzioni generali del file (dimensione carattere...)
 - [chapters](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template/chapters) contenente tutti i Tex dei vari capitoli separati;
-- [images](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template/images) contenente le immagini dei vari capitoli;
+- [images](https://github.com/RustyYak/LaTesiTemplate/tree/master/Template/images) contenente le immagini dei vari capitoli che il sorgente utilizza per compilare il file;
 
-Per informazioni circa il funzionamento, oltre al wiki, si rimanda ad Example per vedere il sorgente esempio ed il compilato del template associato.
+Per informazioni circa il funzionamento, oltre al wiki, si rimanda ad [Example](https://github.com/RustyYak/LaTesiTemplate/tree/master/Example) per vedere il [sorgente esempio](https://github.com/RustyYak/LaTesiTemplate/tree/master/Example/ExampleCode) ed il [compilato](https://github.com/RustyYak/LaTesiTemplate/blob/master/Example/Example.pdf) del template associato.
 # Wiki e Impostazioni del Template
 Per informazioni circa le opzioni relative al template si rimanda alla wiki della repository; la wiki NON è relativa a LaTex ma solo al template.  
 # Consigli, Errori o Modifiche?
