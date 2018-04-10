@@ -1,0 +1,198 @@
+In questo capitolo saranno presenti alcune codici particolari e difficoltà che ho incontrato durante lo svolgimento della tesi. Spero che quindi possa essere utile a qualcuno.
+
+\section{Formule allineate correttamente}
+
+Uno dei motivi per utilizzare $Latex$ è ceratamente per la capacità di gestire le formule matematiche. Uno dei problemi per i neofiti è trovare come allineare correttamente le formule.
+
+Si rimanda al codice sorgente del pdf per capire come fare. 
+
+\begin{align}
+\frac{\sigma^2_{K_{t,T}}T}{2}&=\int_{0}^{F}\frac{1}{K^2}e^{rT}P(K)dK + \int_{F}^{\infty}\frac{1}{K^2}e^{rT}C(K)dK \nonumber \\ &=\int_{0}^{K_0}\frac{1}{K^2}e^{rT}P(K)dK + \int_{K_0}^{\infty}\frac{1}{K^2}e^{rT}C(K)dK \nonumber \\ &+ \int_{K_0}^{F}\frac{dK}{K^2}(P(K)-C(K))
+\end{align}
+
+\bigskip
+
+Un altro problema invece è generare formule distribuite in parallelo. Può essere ostico però la logica è la stessa rispetto a quella adottata in precedenza. Si rimanda ancora una volta al codice sorgente.
+
+\begin{align}
+V_{call}=\frac{\partial c}{\partial \sigma}=\frac{S \sqrt{\tau}}{2\sigma\sqrt{2\pi}}e^{-\frac{1}{2}d^2_1} &&  V_{put}=\frac{\partial p}{\partial \sigma}=\frac{S \sqrt{\tau}}{2\sigma\sqrt{2\pi}}e^{-\frac{1}{2}d^2_1} \nonumber \\ \kappa_{call}=\frac{\partial c}{\partial \sigma^2}=\frac{S\sqrt{\tau}}{2\sigma\sqrt{2\pi}}e^{-\frac{1}{2}d_1^2} && \kappa_{put}=\frac{\partial p}{\partial \sigma^2}=\frac{S\sqrt{\tau}}{2\sigma\sqrt{2\pi}}e^{-\frac{1}{2}d_1^2}
+\end{align}
+
+\bigskip
+
+\section{Attenzione alle tabelle!}
+
+Una parte molto ostica e ceratamene molto rompiscatole per un neofita di Latex sono sicuramente le tabelle, in particolar modo quando queste sono molto estese e superano i margini fissati nel main. Nelle prossime pagine verranno illustrate alcune soluzioni. Si rimanda sempre al codice sorgente per vedere e capire come funzionano.
+
+\clearpage
+\thispagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{sidewaystable}[htpb]
+\small 
+\doublespacing
+\vspace{-0.0cm}
+\scalebox{1.0}{
+\hspace{1.0cm}
+\begin{tabular}[t]{lcccccccccc}
+\toprule
+\bf Commodity & \bf Media & \bf Mediana & \bf Dev. Standard & \bf Max & \bf Min & \bf1 Quant & \bf 3 Quant & \bf Assimetria & \bf Curtosi & \bf AR(1) \\
+\midrule
+Argento & -0.0161 & -0.0145 & 0.0242 & 0.0516 & -0.2355 & -0.0279 & -0.001 & -1.0674 & 5.6796 & 0.9160\\
+Mais & -0.0084 & -0.0061 & 0.0682 & 0.3382 & -0.1219 & -0.0244 & 0.0072 & 3.5634 & 13.9846 & 0.9730 \\
+Oro & -0.0035 & -0.0032 & 0.0099 & 0.0391 & -0.0548 & -0.0079 & 0.0008 & 0.2097 & 6.3386 & 0.9170\\
+Greggio & -0.0101 & -0.0127 & 0.0582 & 0.2808 & -0.2229 & -0.0323 & 0.0014 & 1.5819 & 7.0185 & 0.9680 \\
+Soia & 0.0018 & -0.0042 & 0.0411 & 0.2077 & -0.1842 & -0.0149 & 0.0061 & 1.2727 & 6.1803 & 0.9770\\
+Cacao & -0.0190 & -0.0092 & 0.0335 & 0.1161 & -0.2029 & -0.0363 & 0.0025 & -1.1233 & 5.4155 & 0.8580 \\
+Bestiame & -0.0018 & -0.0028 & 0.0245 & 0.0753 & -0.1052 & -0.0157 & 0.01508 & 0.1221 & 0.6641 & 0.8412 \\
+\bottomrule \\[2.0cm]
+\toprule
+\bf Commodity & \bf Media & \bf Mediana & \bf Dev. Standard & \bf Max & \bf Min & \bf1 Quant & \bf 3 Quant & \bf Assimetria & \bf Curtosi & \bf AR(1) \\
+\midrule
+Argento & -0.2453 & -0.2591 & 0.2980 & 0.4554 & -1.6882 & -0.4378 & -0.0218 & -0.4747 & 4.3576 & 0.9560\\
+Mais & -0.0976 & -0.1321 & 0.5170 & 2.1829 & -1.4585 & -0.4129 & 0.1538 & 1.2002 & 3.1122 & 0.9560\\
+Oro & -0.1785 & -0.1509 & 0.3040 & 0.6391 & -1.2164 & -0.3458 & 0.0242 & -0.5371 & 3.4912 & 0.9430 \\
+Greggio & -0.1774 & -0.2088 & 0.3215 & 1.0067 & -1.8211 & -0.4683 & 0.0350 & 0.5968 & 3.3808 & 0.9640 \\
+Soia & -0.0796 & -0.0191 & 0.5345 & 1.6427 & -1.3395 & -0.3362 & 0.3349 & 0.4037 & 1.1032 & 0.9670\\
+Cacao & -0,2357 & -0,2284 & 0,5009 & 2,2749 & -2,4024 & -0,5524 & 0,1118 & -0,0512 & 4,3339 & 0,8640 \\
+Bestiame & -0.0041 & -0.0402 & 0.3833 & 1.1753 & -0.2882 & 0.2210 & -0.1090  & -0.1343 & -0.1090 & 0.9413 \\
+\bottomrule
+\end{tabular}}
+\caption{Statistiche principali associate rispettivamente a Variance Risk Premium $VRP_{t,T}$ e ad Log Variance Risk Premium $LVRP_{t,T}$ sulle commodities studiate}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\thispagestyle{plain}
+
+\begin{table}[h!]
+\vspace{0.8cm}
+\centering \doublespacing
+\small
+\caption{Risultati regressione di $LVRP_{t,T}=\alpha_i + \beta_i(r^m_{t,T}-r^f_{t,T}) + \varepsilon_t$}
+\scalebox{1.0}{
+\begin{tabular}[h!]{lccccc}
+\toprule
+\bf Commodity & \bf $\alpha$ & & $\beta_i$ & & \bf $R^2$ \\
+\midrule
+Argento & -0.1756 & [-4.6439] & 0.0001 & [2.9184] & 0.0539\\
+& & (3.664e-06) & & (2.15e-03) & \\
+Mais & 0.1257 & [1.9092] & -0.0006 & [-2.1387] & 0.0958\\
+& & (0.05623) & & (0.03246) & \\
+Oro & -0.4813 & [-13.2807] & 0.0012 & [8.5543] & 0.2183\\ 
+& & (2.2e-16) & & (2.2e-16) & \\
+Greggio & 0.6187 & [13.251] & -0.0271 & [-18.160] & 0.1742\\
+& & (2.2e-16) & & (2.2e-16) & \\
+Soia & -0.1574 & [-2.4213] & 0.0007 &  [2.8320] & 0.0737\\
+& & (0.015466) & & (0.0046) & \\
+Cacao & -0.4829 & [-7.9425] & 0.0010 & [4.1626] & 0.1081\\
+& & (1.981e-15) & & (3.147e-05)\\
+Bestiame & -0.4829 & [-7.9425] & 0.0010 & [4.1626] & 0.0998 \\
+& & (1.981e-15) & & (3.147e-05) & \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\thispagestyle{plain}
+
+\begin{sidewaystable}[htpb]
+\small 
+\doublespacing
+\vspace{0.0cm}
+\scalebox{0.9}{
+\hspace{3.0cm}
+\begin{tabular}[t]{lccccccccccccccccccc}
+\toprule
+\bf Commodity & \bf $\alpha$ & \bf $F_{1t}$ & \bf $F_{2t}$ & \bf $F_{3t}$ & \bf $F_{4t}$ & \bf $F_{5t}$ & \bf $F_{6t}$ & \bf $F_{7t}$ & \bf $F_{8t}$ & \bf $R^2$ \\
+\midrule
+Argento & -0.3134 & 0.4219 & -0.2706 & -0.3901 & 0.8093 & -0.4548 & 0.2983 & 0.1016 & 0.7671 & 0.3682 \\
+ & [-1.8370] & [1.2976] & [-0.3608] & [-1.1627] & [1.9108] & [-0.9561] & [0.7384] & [0.3581] & [1.8834] \\
+ & (0.0662) & (0.1944) & (0.7182) & (0.2449) & (0.0560) & (0.3390) & (0.4602) & (0.7202) & (0.0596) & \\
+\\
+Mais & -0.4186 & 0.5770 & -1.9558 & -0.9738 & 0.6732 & -1.5183 & 0.6222 & -0.5645 & 1.0425 & 0.3476 \\
+& [-1.3889] & [11.0047] & [-1.4759] & [-1.6429] & [0.8998] & [-1.8066] & [0.8719] & [-1.1258] & [1.4491] & \\
+& (0.1648) & (0.0015) & (0.1399) & (0.1004) & (0.3682) & (0.0708) & (0.3832) & (0.2602) & (0.1473) & \\
+\\
+Oro & -0.3749 & 0.6075 & -0.2652 & -0.4038 & 0.5786 & 0.0310 & 0.2074 & 0.2407 & 0.9502 & 0.3832 \\
+& [-2.5529] & [2.1708] & [-0.4102] & [-1.3979] & [1.5870] & [0.0758] & [0.5965] & [0.9851] & [2.7102] & \\
+& (0.0106) & (0.0299) & (0.6812) & (0.1621) & (0.1125) & (0.9396) & (0.5508) & (0.3245) & (0.0067) & \\
+\\
+Greggio & 0.1233 &  0.3334 & -0.0998 & -0.4505 & -1.6409 & -1.2767 & -0.2246 & -0.3300 & -0.3771 & 0.4213 \\
+&  [0.6341] & [-2.8998] & [-0.1168] & [-1.1782] & [-3.3994] & [-2.3548] & [-0.4878] & [-1.0202] & [-0.8125] &\\
+& (0.5260) & (0.0018) & (0.9070) & (0.2387) & (0.0006) & (0.0185) & (0.6256) & (0.3076) & (0.4165) & \\
+\\
+Soia & -0.4086 & -0.4372 & -1.8796 & -0.7363 & -0.1777 & -1.1029 & 1.1976 & 0.1438 & -0.5420 & 0.3142\\
+& [-2.3393] & [-2.7520] & [-1.4011] & [-1.2271] & [-0.2345] & [-1.2964] & [1.6576] & [0.2834] & [-0.7442] & \\
+& (0.0185) & (0.0092) & (0.1612) & (0.2198) & (0.8146) & (0.1949) & (0.0974) & (0.7768) & (0.4568) & \\
+\\
+Cacao & -0.3677 & -0.7151 & 0.0134 & -0.1688 & 0.3153 & -0.0562 & 0.6580 & 0.4322 & 0.2685 & 0.1057\\
+& [-1.5217] & [-1.5531] & [0.0126] & [-0.3553] & [0.5258] & [-0.0835] & [1.1501] &[1.0751] & [0.4656] &\\
+& (0.1281) & (0.1204) & (0.9899) & (0.7224) & (0.5991) & (0.9334) & (0.2501) & (0.2823) & (0.6415) & \\
+\\
+Bestiame & 0.4385 & -0.7589 & 0.9052 & 0.3971 & -0.7304 & -1.5789 & -0.1670 & -0.5038 & -0.4001 & 0.3892 \\
+& [2.5707] & [-2.0050] & [1.2031] & [1.1739] & [-1.6191] & [-2.9599] & [-0.4116] & [-1.6324] & [-0.9847] \\
+& (0.0101) & (0.0449) & (0.2289) & (0.2404) & (0.1054) & (0.0030) & (0.6806) & (0.1025) & (0.3247) & \\
+
+\bottomrule
+\end{tabular}}
+\caption{Risultati regressione modello di Ludvingson e Ng}
+\end{sidewaystable}
+
+\section{Come si caricano le immagini?}
+
+Ultima cosa che può risultare pesante e rognosa è certamente caricare le immagini. Per motivi di spazio su GitHub non posso caricare le immagini, per questo vedrete dei rettangoli vuoti, ma nel codice sorgente è presente tutto il codice necessario: sarà sufficiente solamente definire l'indirizzo di dove si trovano le immagini. 
+
+Per le immagini consiglio di creare una cartella separata chiamata Images dove, seguendo la struttura di chapters, caricate le immagini che poi latex ripesca per creare il compilato.
+
+\bigskip
+\begin{figure}[h!]
+    \centering
+    \caption{Payoff tra Variance Swap e Volatility Swap}
+    \includegraphics[width=10cm,height=6cm]{images/chapter1/Vol-2.jpg}
+    \caption*{\footnotesize{Fonte: \textit{Derman, E., M.B. Miller, (2016), The Volatility Smile, Wiley, pag. 63.}}}
+\end{figure}
+\bigskip
+
+\clearpage
+
+\begin{figure}[t!]
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Silver/acfVRPSil.png}
+\caption{ACF $VRP_{t,T}$ - Argento} 
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Silver/pacfVRPSil.png}
+\caption{PACF $VRP$ - Argento} 
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Silver/acfLVRPSil.png}
+\caption{ACF $LVRP_{t,T}$ - Argento} 
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Silver/pacfLVRPSil.png}
+\caption{PACF $LVRP_{t,T}$ - Argento} 
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Corn/acfVRPCor.png}
+\caption{ACF $VRP_{t,T}$ - Mais} 
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[width=\linewidth]{images/chapter2/CorrelationFunction/Corn/pacfVRPCor.png}
+\caption{PACF $VRP_{t,T}$ - Mais} 
+\end{subfigure}
+
+\vspace{0.35cm}
+
+\caption{In ordine, rispettivamente da sinistra a destra, ACF e PACF di $VRP_{t,T}$ e $LVRP_{t,T}$ su Oro e Greggio} 
+\end{figure}
